@@ -3,6 +3,7 @@ import { GCPGuard, GCPGuardArgs } from "./gcpGuard";
 
 // Import each area to add GCPGuardArgs mixins and register policies.
 import './database';
+import './compute';
 
 export { GCPGuard, GCPGuardArgs };
 
