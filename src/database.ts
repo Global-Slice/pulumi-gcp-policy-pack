@@ -1,5 +1,13 @@
-import { ResourceValidationPolicy, validateResourceOfType } from '@pulumi/policy';
+import {EnforcementLevel, ResourceValidationPolicy, validateResourceOfType} from '@pulumi/policy';
 import * as gcp from '@pulumi/gcp';
+import {registerPolicy} from "./gcpGuard";
+
+// Mixin additional properties onto AwsGuardArgs.
+declare module './gcpGuard' {
+    interface GCPGuardArgs {
+        sqlDatabaseSettings?: EnforcementLevel;
+    }
+}
 
 export interface SQLDatabaseSettingsArgs {
     /** */
@@ -25,3 +33,5 @@ export const settings: ResourceValidationPolicy = {
         }
     })
 }
+
+registerPolicy('sqlDatabaseSettings', settings);
