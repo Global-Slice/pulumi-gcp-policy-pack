@@ -16,7 +16,7 @@
         "test": "jest"
     },
     "dependencies": {
-        "@pulumi/gcp": "^6.59.0",
+        "@pulumi/gcp": "^7.0.0",
         "@pulumi/mongodbatlas": "^3.8.1",
         "@pulumi/policy": "^1.5.0",
         "@pulumi/pulumi": "^3.73.0"
